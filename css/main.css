@@ -1,0 +1,112 @@
+/*------------------------------------------
+	A Daily Excuse
+------------------------------------------*/
+
+@font-face {
+	font-family:'NexaBold';
+	src: url('../fonts/NexaBold.eot');
+	src: url('../fonts/NexaBold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/NexaBold.woff') format('woff'),
+		url('../fonts/NexaBold.ttf') format('truetype'),
+		url('../fonts/NexaBold.svg#ProximaNova-Bold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-2666;
+}
+
+/*------------------------------------------
+/* 1 - BASE STYLE
+/*------------------------------------------*/
+
+html { font-size: 1em; line-height: 1.4; }
+::-moz-selection { background: #b3d4fc;text-shadow: none;
+}
+::selection { background: #b3d4fc; text-shadow: none; }
+audio, canvas, iframe, img, svg, video { vertical-align: middle; }
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html, body { min-height: 100%; }
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16px;
+}
+
+header {
+  height: 7.5em;
+  padding: 1.5em 0 0;
+  color: #ff1644;
+  border-bottom: 3px solid #ebebeb;
+}
+
+header, footer {
+  font-weight: 300;  
+}
+
+a { text-decoration: none; color: inherit; }
+
+.wrap {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/*------------------------------------------
+/* 2 - HEADER
+/*------------------------------------------*/
+
+h1 {
+  display: inline-block;
+  margin: 0 0 0 1.5em;
+}
+
+.daily {
+  font-family: 'NexaBold', sans-serif;
+  font-size: 2.25em;
+  color: #ff1644;
+}
+
+.mascot {
+  width: 172px;
+  height: 172px;
+  background: url(../img/mascot.png) no-repeat;
+  background-position: 0 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.language {
+  display: inline-block;
+  float: right;
+}
+
+/*------------------------------------------
+/* 3 - EXCUSE LIST
+/*------------------------------------------*/
+
+.excuse-list {
+  padding: 0;
+  margin: 0 0 0 13.75em;
+}
+.excuse-list li {
+  padding: 2em 0;
+  font-size: 1.5em;
+  list-style: none;
+}
+
+/*------------------------------------------
+/* 4 - FOOTER
+/*------------------------------------------*/
+
+footer {
+  background-color: #ff1644;
+  color: #fff;
+  padding: 2em 0;
+  font-size: 1.5em;
+}
