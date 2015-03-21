@@ -29,7 +29,7 @@
     <script type="text/javascript" src="js/modernizr.min.js"></script>
 
 </head>
-<body>	
+<body ng-controller="ExcusesController as excuses">	
 	<div class="page-wrap">
 
 	<!-- Header -->
@@ -51,8 +51,10 @@
 
 	<section class="grid">
 		<ul class="excuse-list">
-			<li>
-				<span>Exemplo de uma desculpa.</span>
+			<li ng-repeat="item in excuses.items">
+				<span class="excuse-title">{{item.title}}</span>
+				<a class="excuse-plus" href="#">+</a>
+				<div class="button-votes">{{item.votes}}</div>
 			</li>
 		</ul>
 	</section>

@@ -115,6 +115,23 @@ h1 {
   list-style: none;
 }
 
+.button-votes {
+  display: inline-block;
+  float: right;
+  color: #ff1644;
+  font-weight: bold;
+}
+
+.excuse-plus {
+  color: #ff1644;
+  font-weight: bold;
+  line-height: 1;
+  border: 2px solid #ff1644;
+  border-radius: 100%;  
+  padding: 0px 9px;
+  margin-left: .5em;
+}
+
 /*------------------------------------------
 /* 4 - FOOTER
 /*------------------------------------------*/
