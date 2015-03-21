@@ -53,7 +53,7 @@ a { text-decoration: none; color: inherit; }
 
 .page-wrap {
   min-height: 100%;
-  margin-bottom: -130px; 
+  margin-bottom: -100px; 
 }
 .page-wrap:after {
   content: "";
@@ -90,10 +90,18 @@ h1 {
   vertical-align: top;
 }
 
-.language {
+.header-right {
   display: inline-block;
   float: right;
+  margin: 54px 0 0;
 }
+.pt { margin-right: .5em; color: #ff1644; }
+.en { margin-left: .5em; margin-right: 2em; }
+
+.language { color: #ebebeb; }
+.language a, .about a { color: #f8a900; }
+.language a:hover, .about a:hover { color: #ff1644; }
+.language a:active { color: #ff1644; border-top: 1px solid #ff1644; }
 
 /*------------------------------------------
 /* 3 - EXCUSE LIST
@@ -111,10 +119,10 @@ h1 {
 /* 4 - FOOTER
 /*------------------------------------------*/
 
-footer, .page-wrap:after { height: 130px; }
+footer, .page-wrap:after { height: 100px; }
 footer {
   background-color: #ff1644;
   color: #fff;
-  padding: 2em 0;
+  padding: 1.4em 0;
   font-size: 1.5em;
 }
