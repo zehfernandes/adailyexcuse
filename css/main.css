@@ -31,7 +31,7 @@ audio, canvas, iframe, img, svg, video { vertical-align: middle; }
             box-sizing: border-box;
 }
 
-html, body { min-height: 100%; }
+html, body { height: 100%; }
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
@@ -51,7 +51,16 @@ header, footer {
 
 a { text-decoration: none; color: inherit; }
 
-.wrap {
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -130px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.grid {
   width: 100%;
   max-width: 1140px;
   margin: 0 auto;
@@ -90,10 +99,8 @@ h1 {
 /* 3 - EXCUSE LIST
 /*------------------------------------------*/
 
-.excuse-list {
-  padding: 0;
-  margin: 0 0 0 13.75em;
-}
+.excuse-list, footer span {  margin: 0 0 0 13.75rem; }
+.excuse-list { padding: 0; }
 .excuse-list li {
   padding: 2em 0;
   font-size: 1.5em;
@@ -104,6 +111,7 @@ h1 {
 /* 4 - FOOTER
 /*------------------------------------------*/
 
+footer, .page-wrap:after { height: 130px; }
 footer {
   background-color: #ff1644;
   color: #fff;
