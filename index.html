@@ -35,7 +35,7 @@
 	<!-- Header -->
 	<header>
 		<div class="grid">
-			<div class="mascot"></div>
+			<a href="index.html"><div class="mascot"></div></a>
 			<h1><span class="daily">ADESCULPADIÁRIA</span></h1>
 
 			<div class="header-right">
@@ -51,8 +51,8 @@
 
 	<section class="grid">
 		<ul class="excuse-list">
-			<li ng-repeat="item in excuses.items">
-				<span class="excuse-title">{{item.title}}</span>
+			<li ng-repeat="item in sheet.items">
+				<span class="excuse-title">{{item.excuse}}</span>
 				<a class="excuse-plus" href="#">+</a>
 				<div class="button-votes">{{item.votes}}</div>
 			</li>
