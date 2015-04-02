@@ -3,12 +3,13 @@
   var app = angular.module( 'daily', [] );
 
   app.controller('ExcusesController', ['$http', function($http){    
-    var sheet = this;
-    sheet.items = [];
+    var excuses = this;
+    excuses.items = [];   
 
-    $http.get('./db.json').success(function(data){
-      sheet.items = data;
+    $http.get('./db.json').success(function(response){
+      excuses.items = response.data;      
     })
-  }]);
+
+  } ]);
 
 })();
