@@ -3,16 +3,13 @@
   var app = angular.module( 'daily', [] );
 
   app.controller('ExcusesController', ['$http', function($http){    
-    var sheet = this;
-    sheet.items = [];
+    var excuses = this;
+    excuses.items = [];   
 
-    $http.get('https://spreadsheets.google.com/feeds/list/15YLkKhzlKtB4djYpGyYStBGteiLCKyG9ApsPkEzspy4/od6/public/basic?alt=json-in-script&callback=importGSS').success(function(data){
-      sheet.items = data;
+    $http.get('./db.json').success(function(response){
+      excuses.items = response.data;      
     })
-  }]);
 
-  function importGSS(json) {
-    console.log('finished');
-  }
+  } ]);
 
 })();

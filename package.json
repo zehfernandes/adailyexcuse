@@ -1,0 +1,27 @@
+{
+  "name": "adailyexcuse",
+  "version": "1.0.0",
+  "description": "[TODO]",
+  "main": "http.js",
+  "scripts": {
+    "start": "node http.js"
+  },
+  "dependencies": {
+    "drive-db": "^1.6.0",
+    "express": "^4.12.3"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darthkurten/adailyexcuse.git"
+  },
+  "keywords": [
+    "[TODO]"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/darthkurten/adailyexcuse/issues"
+  }
+}
