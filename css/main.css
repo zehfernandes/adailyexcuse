@@ -124,14 +124,15 @@ h1 {
   font-weight: bold;
   position: absolute;
   right: 0;
-  top: 45px;
+  top: 54px;
   width: 110px;
 }
 .upvote {
-  background: url("../img/sleepymascot.gif");
+  background: url("../img/upvote.gif");
   background-size: contain;
-  width: 2.5em;
-  height: 2.5em;
+  width: 45px;
+  height: 82px;
+  margin-top: -37px;
   margin-right: .25em;
   display: inline-block;
   vertical-align: middle;
