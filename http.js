@@ -9,5 +9,3 @@ drive.update("15YLkKhzlKtB4djYpGyYStBGteiLCKyG9ApsPkEzspy4");
 
 // Creates an array with all the objects from de Database
 var sheet = drive.find({ id: { $ne: "" } });
-
-res.json(list);
