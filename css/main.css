@@ -100,7 +100,7 @@ h1 {
 
 .language { color: #ebebeb; }
 .language a, .about a { color: #f8a900; }
-.language a:hover, .about a:hover { color: #ff1644; }
+.language a:hover, .about a:hover { color: #ff1644; border-top: 1px solid; }
 .language a:active { color: #ff1644; border-top: 1px solid #ff1644; }
 
 /*------------------------------------------
@@ -110,16 +110,31 @@ h1 {
 .excuse-list, footer span {  margin: 0 0 0 13.75rem; }
 .excuse-list { padding: 0; }
 .excuse-list li {
-  padding: 2em 0;
+  padding: 2.5em 0;
   font-size: 1.5em;
   list-style: none;
+  position: relative;
 }
 
-.button-votes {
+/* .excuse-box { width: 100%; } Hover for the list lines */
+
+.votes-box {
   display: inline-block;
-  float: right;
   color: #ff1644;
   font-weight: bold;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  width: 110px;
+}
+.upvote {
+  background: url("../img/sleepymascot.gif");
+  background-size: contain;
+  width: 2.5em;
+  height: 2.5em;
+  margin-right: .25em;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .excuse-plus {
@@ -131,6 +146,7 @@ h1 {
   padding: 0px 9px;
   margin-left: .5em;
 }
+.excuse-plus:hover { color: #fff; background-color: #ff1644; } 
 
 /*------------------------------------------
 /* 4 - FOOTER
