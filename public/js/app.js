@@ -12,4 +12,17 @@
 
   } ]);
 
+  app.controller('PagesController', function(){
+    this.index = 0;
+
+    this.selectIndex = function(setIndex) {
+      this.index = setIndex;      
+    };
+    console.log(this.index);
+    this.isSelected = function(checkIndex) {
+      return this.index === checkIndex;
+    };
+
+  });
+
 })();

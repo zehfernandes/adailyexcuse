@@ -159,6 +159,7 @@ h1 {
   border-radius: 100%;  
   padding: 0px 9px;
   vertical-align: middle;
+  cursor: pointer;
 }
 .excuse-plus:hover { color: #fff; background-color: #ff1644; } 
 
