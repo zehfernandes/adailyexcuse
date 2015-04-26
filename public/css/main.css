@@ -109,10 +109,10 @@ h1 {
 
 .excuse-list, footer span {  margin: 0 0 0 13.75rem; }
 .excuse-list { padding: 0; }
-.excuse-list li {
+.excuse-list li { list-style: none; }
+.excuse-list > li {
   padding: 2em 0;
   font-size: 1.5em;
-  list-style: none;
   position: relative;
 }
 
@@ -159,8 +159,29 @@ h1 {
   border-radius: 100%;  
   padding: 0px 9px;
   vertical-align: middle;
+  transition: all 0.3s ease 0s;
 }
-.excuse-plus:hover { color: #fff; background-color: #ff1644; } 
+.excuse-plus:hover { color: #fff; background-color: #ff1644; }
+
+.details-box {
+  font-size: .8em;
+  margin-top: 2.5em;
+  border-bottom: 1px solid #ebebeb;
+}
+.share-buttons { padding: 0; margin-top: 2.5em; } 
+.share-buttons li { display: inline-block; margin-right: .5em; }
+.share-buttons a {
+  border: 2px solid #ff1644;
+  color: #ff1644;
+  font-size: .85em;
+  padding: .35em .65em;
+  border-radius: 3px;
+  transition: all 0.3s ease 0s;
+}
+.share-buttons a:hover {
+  background-color: #ff1644;
+  color: #ffffff;
+}
 
 /*------------------------------------------
 /* 4 - FOOTER
