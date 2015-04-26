@@ -29,7 +29,7 @@
     <script type="text/javascript" src="js/modernizr.min.js"></script>
 
 </head>
-<body ng-controller="ExcusesController as excuses">	
+<body>	
 	<div class="page-wrap">
 
 	<!-- Header -->
@@ -49,18 +49,18 @@
 		</div>			
 	</header>
 
-	<section class="grid">
+	<section class="grid" ng-controller="ExcusesController as excuses">
 		<!-- List -->
-		<ul class="excuse-list">
+		<ul class="excuse-list" ng-controller="myCtrl">
 			<li ng-repeat="item in excuses.items">
 				<span class="excuse-title">{{item.excuse}}</span>
-				<a class="excuse-plus" href="#">+</a>
+				<span class="excuse-plus" ng-click="openTab(item.id)">+</span>
 				<div class="votes-box">
 					<span>upvote</span>
 					<div class="upvote"></div>
 					<span>{{item.votes}}</span>
 				</div>
-				<div class="details-box">
+				<div class="details-box" ng-show="isOpenTab(item.id)">
 					<div>{{item.details}}</div>
 					<ul class="share-buttons">
 						<li><a href="#">Copiar o Texto</a></li>

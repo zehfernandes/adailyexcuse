@@ -114,6 +114,7 @@ h1 {
   padding: 2em 0;
   font-size: 1.5em;
   position: relative;
+  border-bottom: 2px solid #EBEBEB;
 }
 
 /* .excuse-box { width: 100%; } Hover for the list lines */
@@ -159,6 +160,7 @@ h1 {
   border-radius: 100%;  
   padding: 0px 9px;
   vertical-align: middle;
+  cursor: pointer;
   transition: all 0.3s ease 0s;
 }
 .excuse-plus:hover { color: #fff; background-color: #ff1644; }
@@ -166,7 +168,7 @@ h1 {
 .details-box {
   font-size: .8em;
   margin-top: 2.5em;
-  border-bottom: 1px solid #ebebeb;
+  transition: all 1s ease 0s;
 }
 .share-buttons { padding: 0; margin-top: 2.5em; } 
 .share-buttons li { display: inline-block; margin-right: .5em; }
