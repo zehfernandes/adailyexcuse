@@ -21,6 +21,7 @@
         //check if this tab is already in the activeTabs array
         if ($scope.activeTabs.indexOf(tab) > -1) {
             //if so, return true
+            $scope.activeTabs.indexOf(tab).className += " active"
             return true;
         } else {
             //if not, return false
@@ -36,6 +37,7 @@
             $scope.activeTabs.splice($scope.activeTabs.indexOf(tab), 1);
         } else {
             //if it's not, add it!
+            ;
             $scope.activeTabs.push(tab);
         }
     }
