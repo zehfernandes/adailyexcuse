@@ -172,6 +172,12 @@ h1 {
 }
 .share-buttons { padding: 0; margin-top: 2.5em; } 
 .share-buttons li { display: inline-block; margin-right: .5em; }
+.share-buttons [class*="icon-"] { 
+  margin-right: 1em;
+  vertical-align: text-top;
+  font-size: 1.25em;
+  line-height: 1;
+}
 .share-buttons a {
   border: 2px solid #ff1644;
   color: #ff1644;
