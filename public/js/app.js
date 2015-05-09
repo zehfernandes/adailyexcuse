@@ -37,7 +37,6 @@
             $scope.activeTabs.splice($scope.activeTabs.indexOf(tab), 1);
         } else {
             //if it's not, add it!
-            ;
             $scope.activeTabs.push(tab);
         }
     }

@@ -21,7 +21,6 @@
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/icons.css">
 
 	<!-- Favicon 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />-->
@@ -55,7 +54,10 @@
 		<ul class="excuse-list" ng-controller="myCtrl">
 			<li ng-repeat="item in excuses.items">
 				<span class="excuse-title">{{item.excuse}}</span>
-				<span class="excuse-plus" ng-click="openTab(item.id)">+</span>
+				<button class="excuse-plus" ng-click="openTab(item.id)">
+					<span ng-hide="isOpenTab(item.id)">+</span>
+					<span ng-show="isOpenTab(item.id)">-</span>
+				</button>
 				<div class="votes-box">
 					<span>upvote</span>
 					<div class="upvote"></div>
@@ -84,9 +86,7 @@
 
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/angular.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
 
 </html>
