@@ -21,7 +21,6 @@
         //check if this tab is already in the activeTabs array
         if ($scope.activeTabs.indexOf(tab) > -1) {
             //if so, return true
-            $scope.activeTabs.indexOf(tab).className += " active"
             return true;
         } else {
             //if not, return false
@@ -40,6 +39,39 @@
             $scope.activeTabs.push(tab);
         }
     }
+
   });
+
+  var overlay     = document.querySelector( 'div.overlay' ),
+      $_closeBttn = overlay.querySelector( '.overlay-close' ),
+      generate    = true,
+      currentExpression;
+
+  function toggleOverlay(event) {
+      if( classie.has( overlay, 'open' ) ) {
+          classie.remove( overlay, 'open' );
+          classie.add( overlay, 'close' );
+          var onEndTransitionFn = function( ev ) {
+              if( support.transitions ) {
+                  if( ev.propertyName !== 'visibility' ) return;
+                  this.removeEventListener( transEndEventName, onEndTransitionFn );
+              }
+              classie.remove( overlay, 'close' );
+          };
+          if( support.transitions ) {
+              overlay.addEventListener( transEndEventName, onEndTransitionFn );
+          }
+          else {
+              onEndTransitionFn();
+          }
+      }
+      else if( !classie.has( overlay, 'close' ) ) {
+          classie.add( overlay, 'open' );
+      }
+
+      event.preventDefault();
+  }
+
+  document.getElementById( 'trigger-overlay' ).addEventListener( 'click', toggleOverlay );
 
 })();
