@@ -18,18 +18,18 @@
 	<meta itemprop="description" content="">
 
 	<!-- Style -->
-		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
 
-	<!-- Favicon 
+	<!-- Favicon
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />-->
 
 	<!-- Modernizr -->
     <script type="text/javascript" src="js/modernizr.min.js"></script>
 
 </head>
-<body ng-controller="ExcusesController as excuses">	
+<body ng-controller="ExcusesController as excuses">
 	<div class="page-wrap">
 
 	<!-- Header -->
@@ -41,19 +41,19 @@
 			<div class="header-right">
 				<!-- Language -->
 				<span class="language">
-					<a href="pt" class="pt">PT</a> | <a href="en" class="en">EN</a>				
+					<a href="pt" class="pt">PT</a> | <a href="en" class="en">EN</a>
 				</span>
 				<!-- About -->
 				<span class="about"><a href="">SOBRE</a></span>
 			</div>
-		</div>			
+		</div>
 	</header>
 
 	<section class="grid">
 		<!-- List -->
 		<ul class="excuse-list">
 			<li ng-repeat="item in excuses.items">
-				<span class="excuse-title">{{item.excuse}}</span>
+				<span class="excuse-title">{{ item.excuse }}</span>
 				<a class="excuse-plus" href="#">+</a>
 				<div class="votes-box">
 					<span>upvote</span>

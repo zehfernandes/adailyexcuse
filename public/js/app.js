@@ -7,7 +7,7 @@
     excuses.items = [];
 
     $http.get('/list').success(function(response){
-      excuses.items = response;
+      excuses.items = response.rows;
     })
 
   } ]);

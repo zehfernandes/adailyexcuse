@@ -1,6 +1,6 @@
 {
   "name": "adailyexcuse",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "[TODO]",
   "main": "http.js",
   "scripts": {
@@ -8,11 +8,7 @@
   },
   "dependencies": {
     "node-simple-router":"*",
-    "drive-db": "*",
-    "express": "*"
-  },
-  "engines": {
-    "node": "0.10.x"
+    "edit-google-spreadsheet":"*"
   },
   "repository": {
     "type": "git",

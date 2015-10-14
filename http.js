@@ -1,16 +1,84 @@
-var http 	 = require('http'),
-	drive    = require("drive-db").load(),
-	express  = require('express'),
-	Router   = require('node-simple-router'),
-	router   = Router(),
-	fs       = require('fs');
+var http 	 	= require('http'),
+	Spreadsheet = require('edit-google-spreadsheet');
+	Router   	= require('node-simple-router'),
+	router   	= Router(),
+	fs       	= require('fs'),
+	spreadsheet = [];
 
 
-//Router list
+/*------------------------------
+Parse data: by Victor mothafucker
+------------------------------*/
+
+function parse(data) {
+    var result = [],
+        factory = null;
+    Object.keys(data).forEach(function(x) {
+        if(x === '1') {
+            var keys = Object.keys(data[x]).map(function(key) { return data[x][key]; });
+            factory = function(x) {
+                var obj = {};
+                keys.forEach(function(key, index) {
+                    obj[key] = x[index + 1];
+                });
+                return obj;
+            };
+        } else {
+            result.push(factory(data[x]));
+        }
+    });
+    return result;
+}
+
+
+/*------------------------------
+Load Database Spreadsheet
+------------------------------*/
+Spreadsheet.load({
+    debug: true,
+    spreadsheetId: '15YLkKhzlKtB4djYpGyYStBGteiLCKyG9ApsPkEzspy4',
+    worksheetId: 'od6',
+
+    oauth : {
+      email: '108713759324-vv4cguqlanjkto1cmqlo97ke8mivi0lv@developer.gserviceaccount.com',
+      keyFile: 'secret.pem'
+    }
+
+  }, function sheetReady(err, data) {
+
+  	if(err) throw err;
+
+  	spreadsheet = data;
+
+  });
+
+/*------------------------------
+Routes
+------------------------------*/
+
+//List Excuses
 router.get("/list", function(request, response) {
-    drive.update("15YLkKhzlKtB4djYpGyYStBGteiLCKyG9ApsPkEzspy4", function(data){
-    	response.end(JSON.stringify(data));
-   	});
+	spreadsheet.receive(function(err, rows, info) {
+		if(err) throw err;
+
+		response.setHeader('Content-Type', 'application/json; charset=utf-8');
+		rows = parse(rows);
+		response.end(JSON.stringify({ rows }));
+
+    });
+});
+
+//Upvote
+router.get("/upvote/:id", function(request, response) {
+	console.log(request.params.id)
+	spreadsheet.add({ 3: { 4: "30" } });
+
+	spreadsheet.send(function(err) {
+      if(err) throw err;
+      console.log("Updated Cell at row 3, column 5 to 'hello!'");
+  	});
+
+  	response.end();
 });
 
 //Router Index with Get File
@@ -25,7 +93,7 @@ router.get("/", function(request, response) {
 	});
 });
 
-
+//INIT
 var server = http.createServer(router);
 server.listen(process.env.PORT || 3000, function(){
   console.log('listening on', server.address().port);
