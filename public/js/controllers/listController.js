@@ -5,8 +5,7 @@
         $scope.appSettings = appSettings;
 
         function init() {
-            // $scope.customers = excuseFactory.getCustomers();   // syncronous call
-            excuseFactory.getCustomers()
+            excuseFactory.getExcuses()
                 .success(function(data) {
                     $scope.excuses = data.rows;
 

@@ -7,7 +7,7 @@
         $scope.customer = null;
 
         function init() {
-            excuseFactory.getCustomer(customerId)
+            excuseFactory.getExcuse(customerId)
                 .success(function(customer) {
                     $scope.customer = customer;
                 })

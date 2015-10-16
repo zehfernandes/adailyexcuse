@@ -5,7 +5,7 @@
         var factory = {};
         var data;
 
-        factory.getCustomers = function() {
+        factory.getExcuses = function() {
             if(!data) {
                 data = $http.get('/list');
             }
@@ -13,7 +13,7 @@
             return data;
         };
 
-        factory.getCustomer = function(excuseId) {
+        factory.getExcuse = function(excuseId) {
             return $http.get('/list/' + excuseId);
         };
 
