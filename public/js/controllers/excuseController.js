@@ -3,6 +3,7 @@
     var ExcuseController = function($scope, $routeParams, excuseFactory) {
 
         var customerId = $routeParams.customerId;
+        console.log(excuseFactory);
         $scope.customer = null;
 
         function init() {

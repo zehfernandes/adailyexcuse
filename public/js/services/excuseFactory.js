@@ -3,18 +3,22 @@
     var excuseFactory = function($http) {
 
         var factory = {};
+        var data;
 
         factory.getCustomers = function() {
-            // return the promise so controller handles it
-            return $http.get('/list');
+            if(!data) {
+                data = $http.get('/list');
+            }
+
+            return data;
         };
 
-        factory.getCustomer = function(customerId) {
-            return $http.get('/list/' + customerId);
+        factory.getCustomer = function(excuseId) {
+            return $http.get('/list/' + excuseId);
         };
 
-        factory.upvoteOne = function(customerId) {
-            return $http.get('/upvote/' + customerId);
+        factory.upvoteOne = function(excuseId) {
+            return $http.get('/upvote/' + excuseId);
         };
 
         return factory;

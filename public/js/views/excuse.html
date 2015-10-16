@@ -1,6 +1,18 @@
 <ul class="excuse-list">
-  <li>
-    <span class="excuse-title">{{customer.excuse}}</span>
-    <a class="excuse-plus" href="#/excuses/{{  customer.id }}">+</a>
-  </li>
+	<li>
+		<span class="excuse-title">{{customer.excuse}}</span>
+		<div class="votes-box">
+			<span>upvote</span>
+			<div class="upvote"></div>
+			<span>{{customer.votes}}</span>
+		</div>
+		<div class="details-box">
+			<div>{{customer.details}}</div>
+			<ul class="share-buttons">
+				<li><a href="#"><span class="icon-copy"></span>Copiar o Texto</a></li>
+				<li><a href="#"><span class="icon-mail"></span>Enviar por e-mail</a></li>
+				<li><a href="#"><span class="icon-facebook"></span>Compartilhar no Facebook</a></li>
+			</ul>
+		</div>
+	</li>
 </ul>
