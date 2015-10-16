@@ -10,9 +10,9 @@
                 templateUrl: '/js/views/list.html'
             })
 
-            .when('/excuses/:customerId', {
+            .when('/excuses/:excuseId', {
                 controller: 'ExcuseController',
-                templateUrl: '/js/views/excuse.html'
+                templateUrl: '/js/views/excuse.html',
             })
 
             .otherwise({ redirectTo: '/' });

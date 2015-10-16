@@ -6,26 +6,11 @@
 
         function init() {
             excuseFactory.getExcuses()
-                .success(function(data) {
-                    $scope.excuses = data.rows;
+                .then(function(data) {
+                    $scope.excuses = data;
 
-                    if ($cookies.votes) {
-
-                        var alreadyVoted = $cookies.votes.split('/');
-                        alreadyVoted.pop();
-
-                        angular.forEach($scope.excuses, function(value, key) {
-                            for (var i in alreadyVoted) {
-                                if ($scope.excuses[key].id == alreadyVoted[i]) {
-                                    $scope.excuses[key].voted = true;
-                                }
-                            }
-                        });
-
-                    }
-
-                })
-                .error(function(data, status, headers, config) {
+                },
+                function(data) {
                     console.log('there was an error');
                 });
         }

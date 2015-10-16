@@ -2,16 +2,15 @@
 
     var ExcuseController = function($scope, $routeParams, excuseFactory) {
 
-        var customerId = $routeParams.customerId;
-        console.log(excuseFactory);
-        $scope.customer = null;
+        var excuseId = $routeParams.excuseId;
+        $scope.excuse = null;
 
         function init() {
-            excuseFactory.getExcuse(customerId)
-                .success(function(customer) {
-                    $scope.customer = customer;
-                })
-                .error(function(data, status, headers, config) {
+            excuseFactory.getExcuse(excuseId)
+                .then(function(data) {
+                    $scope.excuse = { data };
+                },
+                function(data) {
                     console.log('there was an error');
                 });
         }

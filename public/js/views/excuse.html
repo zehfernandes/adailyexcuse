@@ -1,13 +1,13 @@
 <ul class="excuse-list">
-	<li>
-		<span class="excuse-title">{{customer.excuse}}</span>
+	<li ng-repeat="excuse in excuse">
+		<span class="excuse-title">{{excuse.excuse}}</span>
 		<div class="votes-box">
 			<span>upvote</span>
-			<div class="upvote"></div>
-			<span>{{customer.votes}}</span>
+			 <div class="upvote" ng-click="upvote(this)" ng-class="{ active : excuse.voted }"></div>
+			<span>{{excuse.votes}}</span>
 		</div>
 		<div class="details-box">
-			<div>{{customer.details}}</div>
+			<div>{{excuse.details}}</div>
 			<ul class="share-buttons">
 				<li><a href="#"><span class="icon-copy"></span>Copiar o Texto</a></li>
 				<li><a href="#"><span class="icon-mail"></span>Enviar por e-mail</a></li>

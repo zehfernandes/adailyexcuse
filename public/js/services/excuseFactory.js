@@ -1,20 +1,57 @@
 (function() {
 
-    var excuseFactory = function($http) {
+    var excuseFactory = function($http, $q, $cookies) {
 
         var factory = {};
         var data;
 
-        factory.getExcuses = function() {
-            if(!data) {
-                data = $http.get('/list');
+        function checkCookie(d) {
+             if ($cookies.votes) {
+
+                var alreadyVoted = $cookies.votes.split('/');
+                alreadyVoted.pop();
+                angular.forEach(d, function(value, key) {
+                    for (var i in alreadyVoted) {
+                        if (d[key].id == alreadyVoted[i]) {
+                            d[key].voted = true;
+                        }
+                    }
+                });
             }
 
-            return data;
+            return d;
+        };
+
+        factory.getExcuses = function() {
+            var def = $q.defer();
+
+            $http.get("/list")
+                .success(function(d) {
+                    data = checkCookie(d.rows);
+                    def.resolve(data);
+                })
+                .error(function() {
+                    def.reject("Failed");
+                });
+
+            return def.promise;
         };
 
         factory.getExcuse = function(excuseId) {
-            return $http.get('/list/' + excuseId);
+
+            var def = $q.defer();
+
+            $http.get('/list/' + excuseId)
+                .success(function(d) {
+                    data = checkCookie({ d });
+
+                    def.resolve(data.d);
+                })
+                .error(function() {
+                    def.reject("Failed");
+                });
+
+            return def.promise;
         };
 
         factory.upvoteOne = function(excuseId) {
@@ -24,7 +61,7 @@
         return factory;
     };
 
-    excuseFactory.$inject = ['$http'];
+    excuseFactory.$inject = ['$http', '$q', '$cookies'];
 
     angular.module('dailyApp').factory('excuseFactory', excuseFactory);
 

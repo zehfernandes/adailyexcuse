@@ -91,6 +91,10 @@
 /* 1 - BASE STYLE
 /*------------------------------------------*/
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 html { font-size: 1em; line-height: 1.4; }
 ::-moz-selection { background: #b3d4fc;text-shadow: none;
 }
