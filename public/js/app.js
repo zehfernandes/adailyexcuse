@@ -1,15 +1,21 @@
-(function(){
+(function() {
+    var app = angular.module('dailyApp', ['ngRoute', 'ngAnimate', 'ngCookies']);
 
-  var app = angular.module( 'daily', [] );
+    // ----------- ROUTES ------------
+    // -------------------------------
+    app.config(function($routeProvider) {
+        $routeProvider
+            .when('/', {
+                controller: 'ListController',
+                templateUrl: '/js/views/list.html'
+            })
 
-  app.controller('ExcusesController', ['$http', function($http){
-    var excuses = this;
-    excuses.items = [];
+            .when('/excuses/:customerId', {
+                controller: 'ExcuseController',
+                templateUrl: '/js/views/excuse.html'
+            })
 
-    $http.get('/list').success(function(response){
-      excuses.items = response.rows;
-    })
+            .otherwise({ redirectTo: '/' });
+    });
 
-  } ]);
-
-})();
+}());

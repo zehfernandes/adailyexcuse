@@ -1,0 +1,11 @@
+<ul class="excuse-list">
+  <li ng-repeat="item in excuses | orderBy: '-votes'">
+    <span class="excuse-title">{{item.excuse}}</span>
+    <a class="excuse-plus" href="#/excuses/{{  item.id }}">+</a>
+    <div class="votes-box">
+      <span>upvote</span>
+      <div class="upvote" ng-click="upvote(this)" ng-class="{ active : item.voted }"></div>
+      <span>{{item.votes}}</span>
+    </div>
+  </li>
+</ul>

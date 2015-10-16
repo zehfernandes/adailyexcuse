@@ -68,15 +68,33 @@ router.get("/list", function(request, response) {
     });
 });
 
+//View unique
+router.get("/list/:id", function(request, response) {
+
+	spreadsheet.receive(function(err, rows, info) {
+		var id = parseInt(request.params.id)-1;
+		rows = parse(rows);
+
+		response.end(JSON.stringify( rows[id] ));
+	});
+});
+
 //Upvote
 router.get("/upvote/:id", function(request, response) {
-	console.log(request.params.id)
-	spreadsheet.add({ 3: { 4: "30" } });
 
-	spreadsheet.send(function(err) {
-      if(err) throw err;
-      console.log("Updated Cell at row 3, column 5 to 'hello!'");
-  	});
+	spreadsheet.receive(function(err, rows, info) {
+		var id = parseInt(request.params.id)+1;
+		var votes = JSON.stringify(rows[id][4] + 1);
+		var obj = {};
+
+		obj[id] = { 4: votes };
+		spreadsheet.add(obj);
+
+		spreadsheet.send(function(err) {
+      		if(err) throw err;
+  		});
+
+	});
 
   	response.end();
 });
