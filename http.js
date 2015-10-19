@@ -84,10 +84,10 @@ router.get("/upvote/:id", function(request, response) {
 
 	spreadsheet.receive(function(err, rows, info) {
 		var id = parseInt(request.params.id)+1;
-		var votes = JSON.stringify(rows[id][4] + 1);
+		var votes = JSON.stringify(rows[id][5] + 1);
 		var obj = {};
 
-		obj[id] = { 4: votes };
+		obj[id] = { 5: votes };
 		spreadsheet.add(obj);
 
 		spreadsheet.send(function(err) {
