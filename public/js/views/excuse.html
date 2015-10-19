@@ -7,11 +7,11 @@
 			<span>{{excuse.votes}}</span>
 		</div>
 		<div class="details-box">
-			<div>{{excuse.details}}</div>
+			<div id="detail">{{excuse.details}}</div>
 			<ul class="share-buttons">
-				<li><a href="#"><span class="icon-copy"></span>Copiar o Texto</a></li>
-				<li><a href="#"><span class="icon-mail"></span>Enviar por e-mail</a></li>
-				<li><a href="#"><span class="icon-facebook"></span>Compartilhar no Facebook</a></li>
+				<li><a href="" class="copytext" data-clipboard-target="#detail"><span class="icon-copy"></span>Copiar o Texto</a></li>
+				<li><a href="mailto:?body={{excuse.details | encodeURIComponent}}" target="_blank"><span class="icon-mail"></span>Enviar por e-mail</a></li>
+				<!--<li><a href="#"><span class="icon-facebook"></span>Compartilhar no Facebook</a></li>-->
 			</ul>
 		</div>
 	</li>

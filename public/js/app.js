@@ -1,5 +1,5 @@
 (function() {
-    var app = angular.module('dailyApp', ['ngRoute', 'ngAnimate', 'ngCookies']);
+    var app = angular.module('dailyApp', ['ngRoute', 'ngCookies']);
 
     // ----------- ROUTES ------------
     // -------------------------------
@@ -16,6 +16,12 @@
             })
 
             .otherwise({ redirectTo: '/' });
+    });
+
+    // ----------- FILTERS ------------
+    // -------------------------------
+    app.filter('encodeURIComponent', function() {
+        return window.encodeURIComponent;
     });
 
 }());

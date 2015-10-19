@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" itemscope itemtype="http://schema.org/CreativeWork" ng-app="dailyApp" ng-cloak>
+<html lang="pt-br" itemscope itemtype="http://schema.org/CreativeWork" ng-app="dailyApp">
 <head>
 
 	<title>ADESCULPADIÁRIA</title>
@@ -18,15 +18,14 @@
 	<meta itemprop="description" content="">
 
 	<!-- Style -->
-		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-
 	<!-- Favicon
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />-->
 
 	<!-- Modernizr -->
-    <script type="text/javascript" src="js/modernizr.min.js"></script>
+    <script type="text/javascript" src="js/lib/modernizr.min.js"></script>
 
 </head>
 <body>
@@ -35,7 +34,7 @@
 	<!-- Header -->
 	<header>
 		<div class="grid">
-			<a href="index.html"><div class="mascot"></div></a>
+			<a href="#"><div class="mascot"></div></a>
 			<h1><span class="daily">ADESCULPADIÁRIA</span></h1>
 
 			<div class="header-right">
@@ -51,7 +50,7 @@
 
 	<section class="grid">
 
-		<div ng-view class="slide-animation"></div>
+		<div ng-view></div>
 
 	</div>
 
@@ -67,8 +66,9 @@
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 <script src="/js/lib/angular-resource.min.js"></script>
 <script src="/js/lib/angular-route.min.js"></script>
-<script src="/js/lib/angular-animate.min.js"></script>
 <script src="/js/lib/angular-cookies.min.js"></script>
+<script src="/js/lib/clipboard.min.js"></script>
+
 
 <script src="/js/app.js"></script>
 <script src="/js/controllers/listController.js"></script>

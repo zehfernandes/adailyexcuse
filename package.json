@@ -7,8 +7,9 @@
     "start": "node http.js"
   },
   "dependencies": {
-    "node-simple-router":"*",
-    "edit-google-spreadsheet":"*"
+    "clipboard": "^1.4.2",
+    "edit-google-spreadsheet": "*",
+    "node-simple-router": "*"
   },
   "repository": {
     "type": "git",

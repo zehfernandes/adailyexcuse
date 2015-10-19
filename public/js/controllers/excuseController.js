@@ -13,6 +13,9 @@
                 function(data) {
                     console.log('there was an error');
                 });
+
+            var clipboard = new Clipboard('.copytext');
+
         }
 
         init();
