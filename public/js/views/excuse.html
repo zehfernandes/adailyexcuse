@@ -7,7 +7,7 @@
 			<span>{{excuse.votes}}</span>
 		</div>
 		<div class="details-box">
-			<div id="detail">{{excuse.details}}</div>
+			<div id="detail" ng-bind-html="excuse.details"></div>
 			<ul class="share-buttons">
 				<li><a href="" class="copytext" data-clipboard-target="#detail"><span class="icon-copy"></span>Copiar o Texto</a></li>
 				<li><a href="mailto:?body={{excuse.details | encodeURIComponent}}" target="_blank"><span class="icon-mail"></span>Enviar por e-mail</a></li>
