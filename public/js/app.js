@@ -1,5 +1,5 @@
 (function() {
-    var app = angular.module('dailyApp', ['ngRoute', 'ngCookies']);
+    var app = angular.module('dailyApp', ['ngRoute', 'ngCookies', 'ngSanitize']);
 
     // ----------- ROUTES ------------
     // -------------------------------
