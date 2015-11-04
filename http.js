@@ -74,7 +74,7 @@ router.get("/list/:id", function(request, response) {
 	spreadsheet.receive(function(err, rows, info) {
 		var id = parseInt(request.params.id)-1;
 		rows = parse(rows);
-    rows[id].details = rows[id].details.replace(/\n/g, '<br/>');
+    rows[id].details = rows[id].details.replace(/\n/g, '<br>');
 
 		response.end(JSON.stringify( rows[id] ));
 	});

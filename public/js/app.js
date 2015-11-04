@@ -21,7 +21,10 @@
     // ----------- FILTERS ------------
     // -------------------------------
     app.filter('encodeURIComponent', function() {
-        return window.encodeURIComponent;
+        return function (input) {
+            input = encodeURIComponent(input);
+            return input.replace(/%3Cbr%3E/g, "%0D%0A");
+        }
     });
 
 }());
