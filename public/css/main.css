@@ -161,7 +161,7 @@ h1 {
   color: #ff1644;
   transition: color 0.5s ease;
 }
-.daily:hover { color: #F89C00; }
+.daily:hover { color: #000; }
 
 .mascot {
   width: 172px;
