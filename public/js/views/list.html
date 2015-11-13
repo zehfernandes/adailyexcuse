@@ -1,6 +1,6 @@
 <ul class="excuse-list">
   <li ng-repeat="item in excuses | orderBy: '-votes'">
-    <span class="excuse-title">{{item.excuse}}</span>
+    <a href="#/excuses/{{  item.id }}"><span class="excuse-title">{{item.excuse}}</span></a>
     <a class="excuse-plus" href="#/excuses/{{  item.id }}">+</a>
     <div class="votes-box">
       <span>upvote</span>

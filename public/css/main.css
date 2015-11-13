@@ -236,7 +236,9 @@ h1 {
   white-space: nowrap;
   margin-right: .25em;
   vertical-align: middle;
+  transition: color .5s ease;
 }
+.excuse-title:hover { color: #ff1644; }
 .excuse-plus {
   padding: 0px 9px;
   width: 35px;
