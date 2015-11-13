@@ -159,7 +159,9 @@ h1 {
   font-family: 'NexaBold', sans-serif;
   font-size: 2.25em;
   color: #ff1644;
+  transition: color 0.5s ease;
 }
+.daily:hover { color: #000; }
 
 .mascot {
   width: 172px;
@@ -234,7 +236,9 @@ h1 {
   white-space: nowrap;
   margin-right: .25em;
   vertical-align: middle;
+  transition: color .5s ease;
 }
+.excuse-title:hover { color: #ff1644; }
 .excuse-plus {
   padding: 0px 9px;
   width: 35px;
