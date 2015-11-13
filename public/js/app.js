@@ -1,5 +1,6 @@
 (function() {
     var app = angular.module('dailyApp', ['ngRoute', 'ngCookies', 'ngSanitize']);
+    var about = document.getElementsByClassName('overlay');
 
     // ----------- ROUTES ------------
     // -------------------------------
@@ -22,6 +23,16 @@
     // -------------------------------
     app.filter('encodeURIComponent', function() {
         return window.encodeURIComponent;
+    });
+
+    // ----------- ABOUT ------------
+    // -------------------------------
+    document.getElementById('trigger-overlay').addEventListener('click', function () {
+        about[0].classList.add('open');
+    });
+
+    document.getElementsByClassName('overlay-close')[0].addEventListener('click', function () {
+        about[0].classList.remove('open');
     });
 
 }());
