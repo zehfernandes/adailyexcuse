@@ -30,12 +30,16 @@
 
     // ----------- ABOUT ------------
     // -------------------------------
-    document.getElementById('trigger-overlay').addEventListener('click', function () {
+    document.getElementById('trigger-overlay').addEventListener('click', function (e) {
         about[0].classList.add('open');
+
+        e.preventDefault();
     });
 
-    document.getElementsByClassName('overlay-close')[0].addEventListener('click', function () {
+    document.getElementsByClassName('overlay-close')[0].addEventListener('click', function (e) {
         about[0].classList.remove('open');
+
+        e.preventDefault();
     });
 
 }());
