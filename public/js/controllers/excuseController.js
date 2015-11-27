@@ -1,6 +1,6 @@
 (function() {
 
-    var ExcuseController = function($scope, $routeParams, excuseFactory) {
+    var ExcuseController = function($scope, $cookies, $routeParams, excuseFactory) {
 
         var excuseId = $routeParams.excuseId;
         $scope.excuse = null;
@@ -20,9 +20,26 @@
 
         init();
 
+         $scope.upvote = function(repeatScope) {
+            if (repeatScope.excuse.voted != true) {
+
+                excuseFactory.upvoteOne(repeatScope.excuse.id);
+
+                if ($cookies.votes) {
+                    $cookies.votes += repeatScope.excuse.id+'/';
+                } else {
+                    $cookies.votes = repeatScope.excuse.id+'/';
+                }
+
+                repeatScope.excuse.votes += 1;
+                repeatScope.excuse.voted = true;
+
+            }
+        }
+
     };
 
-    ExcuseController.$inject = ['$scope', '$routeParams', 'excuseFactory'];
+    ExcuseController.$inject = ['$scope', '$cookies', '$routeParams', 'excuseFactory'];
 
     angular.module('dailyApp')
         .controller('ExcuseController', ExcuseController);
